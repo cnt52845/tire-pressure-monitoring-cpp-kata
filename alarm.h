@@ -14,11 +14,12 @@ public:
             alarm_on = true;
         }
     }
-    bool is_alarm_on() { return alarm_on; }
+    bool is_alarm_on() const { return alarm_on; }
 
 protected:
     Sensor sensor;
-    double low_pressure_threshold  = 17;
-    double high_pressure_threshold = 21;
     bool   alarm_on{};
+
+    constexpr static double low_pressure_threshold  = 17;
+    constexpr static double high_pressure_threshold = 21;
 };
